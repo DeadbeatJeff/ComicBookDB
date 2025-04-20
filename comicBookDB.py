@@ -2,6 +2,8 @@
 # some help designing some of the methods from Google's Gemini
 # AI via https://g.co/gemini/share/3b4bc25f28b9
 
+# This program was part of my CS 202 Intro to Python course at UWM in Spring 2025.
+
 import bisect
 
 class ComicBookDB:
@@ -28,9 +30,8 @@ class ComicBookDB:
                 self.titleDB[ComicBook.title].append(ComicBook)
 
     def removeComicBook(self, ComicBook):
-        """ This method revoves a comic book from the databaser. """
+        """ This method revoves a comic book from the database. """
         if ComicBook.title not in self.titleDB:
-##            printString = ComicBook.printComic()
             print(f"{ComicBook.getString()} is not in database.")
         else:
             foundComic = False
@@ -43,7 +44,7 @@ class ComicBookDB:
                 
 
     def printDB(self, keyParam=None):
-        """ This method prints the databaser. """
+        """ This method prints the database. """
         if keyParam is None:
             total_elements = 0
             for key in self.titleDB:
