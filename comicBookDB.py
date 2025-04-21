@@ -102,6 +102,18 @@ class ComicBook:
         """ This method represents elements of ComicBook """
         return f"\"{self.title}\", Vol. {self.vol}, No. {self.issue}"
 
+    def getTitle(self):
+        """ This method gets the title of ComicBook """
+        return self.title
+
+    def getVol(self):
+        """ This method gets the volume of ComicBook """
+        return self.vol
+
+    def getIssue(self):
+        """ This method gets the issue number of ComicBook """
+        return get.issue
+
     def printComic(self):
         """ This method prints a ComicBook """
         print(f"(\"{self.title}\", Vol. {self.vol}, No. {self.issue})", end="")
