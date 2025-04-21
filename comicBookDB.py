@@ -160,7 +160,7 @@ if __name__ == "__main__":
     MyDB.printDB()
     MyDB.insertComicBook(MyComic1)
     MyDB.removeComicBook(MyComic2)
-    MyComic4 = comicBookDB.ComicBook("Luck Cage: Power Man", 1, 1)
+    MyComic4 = comicBookDB.ComicBook("Luke Cage: Power Man", 1, 1)
     MyDB.insertComicBook(MyComic4)
     MyDB.printDB()
     MyDB.printDB("Iron Fist")
