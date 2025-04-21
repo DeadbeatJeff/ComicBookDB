@@ -87,7 +87,7 @@ class ComicBookDB:
                 self.insertComicBook(MyComic)
     
     def writeDB(self):
-        """ This method wrties in a database in csv format. """
+        """ This method wrties out a database in csv format. """
         file_path = filedialog.askdirectory()
         filename = input("Enter the filename (e.g., MyComicDB.csv): ")
         file_path_and_name = f"{file_path}/{filename}"
