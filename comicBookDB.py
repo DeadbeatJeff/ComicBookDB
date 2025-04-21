@@ -5,7 +5,8 @@
 # This program was part of my CS 202 Intro to Python course at UWM in Spring 2025.
 
 import bisect
-
+import tkinter as tk
+from tkinter import filedialog
 class ComicBookDB:
     """ This implements a comic book database as a dictionary of lists. """
     def __init__(self, ComicBook):
@@ -72,7 +73,28 @@ class ComicBookDB:
                     if counter != total_elements:
                         print(f", ", end = "")
                 print(f"]")
-            
+
+    def readDB(self):
+        """ This method reads in a database in csv format. """
+        file_path = filedialog.askopenfilename()
+        with open(file_path, "r") as file:
+            lines = file.readlines()
+            for line in lines:
+                line = line.split(",")
+                line[1] = int(line[1])
+                line[2] = int(line[2])
+                MyComic = ComicBook(line[0], line[1], line[2])
+                self.insertComicBook(MyComic)
+    
+    def writeDB(self):
+        """ This method wrties in a database in csv format. """
+        file_path = filedialog.askdirectory()
+        filename = input("Enter the filename (e.g., MyComicDB.csv): ")
+        file_path_and_name = f"{file_path}/{filename}"
+        with open(file_path_and_name, 'w') as file:
+            for key in self.titleDB:
+                for obj in self.titleDB[key]:
+                    file.write(f"{obj.title}, {obj.vol}, {obj.issue}\n")
            
 
 class ComicBook:
@@ -143,3 +165,9 @@ if __name__ == "__main__":
     MyDB.printDB()
     MyDB.printDB("Iron Fist")
     MyDB.printDB()
+    MyDB.insertComicBook(MyComic2)
+    MyDB.printDB()
+    MyDB.writeDB()
+    MyDB2 = comicBookDB.ComicBookDB(MyComic1)
+    MyDB2.readDB()
+    MyDB2.printDB()
