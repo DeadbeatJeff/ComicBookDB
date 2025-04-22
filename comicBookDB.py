@@ -1,5 +1,5 @@
-# This module defines a comic book database. In the interests of full disclosure, I received
-# some help designing some of the methods from Google's Gemini
+# This module implements a toy comic book database. In the interests of full disclosure,
+# I received some help designing some of the methods from Google's Gemini
 # AI via https://g.co/gemini/share/3b4bc25f28b9
 
 # This program was part of my CS 202 Intro to Python course at UWM in Spring 2025.
@@ -7,8 +7,9 @@
 import bisect
 import tkinter as tk
 from tkinter import filedialog
+
 class ComicBookDB:
-    """ This implements a comic book database as a dictionary of lists. """
+    """ This class implements a comic book database as a dictionary of lists. """
     def __init__(self, ComicBook):
         """ This constructor creates a comic book database as a with its first comic book. """
         self.titleDB = {ComicBook.title: [ComicBook]}
