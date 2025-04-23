@@ -150,6 +150,8 @@ if __name__ == "__main__":
 
     MyComic1 = comicBookDB.ComicBook("Iron Fist", 1, 8)
     MyDB1 = comicBookDB.ComicBookDB(MyComic1)
+    MyDB1.removeComicBook(MyComic1)
+    MyDB1.insertComicBook(MyComic1)
     MyDB1.printDB()
     MyComic2 = comicBookDB.ComicBook("Iron Fist", 1, 9)
     MyDB1.insertComicBook(MyComic2)
@@ -170,5 +172,6 @@ if __name__ == "__main__":
     MyDB1.printDB()
     MyDB1.writeDB()
     MyDB2 = comicBookDB.ComicBookDB(MyComic1)
+    MyDB2.removeComicBook(MyComic1)
     MyDB2.readDB()
     MyDB2.printDB()
